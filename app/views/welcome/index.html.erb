@@ -1,0 +1,22 @@
+<div class="content-container">
+    <p>The Obey Movie Database</p>
+
+<%= form_for :query, class: 'search_form', url: '/movie-query' do |f|%>
+<div class="box">
+<%= f.text_field :search_term, class: 'search_box', placeholder: "type a movie title..."%><br>
+
+<%= f.submit "Submit" , class: "search_button" %>
+</div>
+<%end%>
+
+<!-- will eventually create an if statement (or something) to determine what to show / or maybe there needs to be a partial...something that's like 'for each movie...'
+
+if we don't own the movie..make it an option to add it..
+ugh, there's a lot we can do..-->
+
+    <div class="current-movie-content">
+        <img id="movie-poster" src="">
+        <span id="movie-desciption"></span>
+    </div>
+
+</div>

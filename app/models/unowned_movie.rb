@@ -1,0 +1,2 @@
+class UnownedMovie < ApplicationRecord
+end

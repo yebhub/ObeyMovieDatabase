@@ -1,0 +1,2 @@
+class OwnedMovie < ApplicationRecord
+end

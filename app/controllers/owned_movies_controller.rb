@@ -1,0 +1,2 @@
+class OwnedMoviesController < ApplicationController
+end

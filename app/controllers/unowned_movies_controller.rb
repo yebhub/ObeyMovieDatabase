@@ -1,0 +1,2 @@
+class UnownedMoviesController < ApplicationController
+end
