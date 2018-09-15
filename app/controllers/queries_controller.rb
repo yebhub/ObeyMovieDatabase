@@ -3,12 +3,15 @@ class QueriesController < ApplicationController
    
     def index
     end 
-
+#create error messages if there's no response
     def create
         search_term = params["query"]["search_term"]
         response = api_request(search_term)
 
-        Movie.create(title: response["title"], poster: response["poster_path"], description: response["overview"])
+        movie = OwnedMovie.create(title: response["title"], poster: response["poster_path"], description: response["overview"])
+
+        movie.save!
+
 
         redirect_to "/"
     end 

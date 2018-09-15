@@ -13,10 +13,12 @@
 
 if we don't own the movie..make it an option to add it..
 ugh, there's a lot we can do..-->
+<%if @movie %>
 
     <div class="current-movie-content">
-        <img id="movie-poster" src="">
-        <span id="movie-desciption"></span>
+        <img id="movie-poster" src="https://image.tmdb.org/t/p/w185/<%=@movie.poster%>" >
+        <span id="movie-description"> <%=@movie.description%></span>
     </div>
+<%end%>
 
 </div>
