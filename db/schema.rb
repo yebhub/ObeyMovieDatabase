@@ -12,6 +12,16 @@
 
 ActiveRecord::Schema.define(version: 2018_09_15_044913) do
 
+  create_table "movies", force: :cascade do |t|
+    t.string "title"
+    t.string "stars"
+    t.string "poster"
+    t.text "description"
+    t.datetime "release_date"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "owned_movies", force: :cascade do |t|
     t.string "title"
     t.string "stars"

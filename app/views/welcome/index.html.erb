@@ -1,24 +1,28 @@
-<div class="content-container">
-    <p>The Obey Movie Database</p>
+<div class="container">
+<h1>The Obey Movie Database</h1>
 
-<%= form_for :query, class: 'search_form', url: '/movie-query' do |f|%>
-<div class="box">
-<%= f.text_field :search_term, class: 'search_box', placeholder: "type a movie title..."%><br>
-
-<%= f.submit "Submit" , class: "search_button" %>
-</div>
+<%= form_for :welcome, class: 'form-group', url: '/search' do |f|%>
+<%= f.text_field :search_term, class: 'form-control search-box', placeholder: "type a movie title..."%>
+<%= f.submit "Submit" , class: "btn btn-default" %>
 <%end%>
+
+
 
 <!-- will eventually create an if statement (or something) to determine what to show / or maybe there needs to be a partial...something that's like 'for each movie...'
 
 if we don't own the movie..make it an option to add it..
 ugh, there's a lot we can do..-->
-<%if @movie %>
-
-    <div class="current-movie-content">
-        <img id="movie-poster" src="https://image.tmdb.org/t/p/w185/<%=@movie.poster%>" >
-        <span id="movie-description"> <%=@movie.description%></span>
-    </div>
+<%if @results%>
+<div class="row">
+    <%@results.each do |result|%>
+    <a href="/unowned/show/<%=result["id"]%>">
+        <div class="col-md-3 col-sm-6 column"><img class="poster" src="https://image.tmdb.org/t/p/w185/<%=result["poster_path"]%>" onerror="this.style.display='none'" > </div>
+    </a>
+    <%end%>
+</div>
 <%end%>
+
+
+
 
 </div>
