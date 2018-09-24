@@ -3,8 +3,14 @@
     <div class="movieInfo">
         <h1><%=@movie["title"]%></h1>
         <img class="poster" src="https://image.tmdb.org/t/p/w185/<%=@movie["poster_path"]%>">
-        <div class="movieDescription"><%=@movie["overview"]%></div>
-        <button class="btn btn-default">add</button>
+
+        <div class="movieDescription">
+            <%=@movie["overview"]%>
+        </div>
+
+        <button class="btn btn-default">
+            <a href="/owned/add/<%=@movie["id"]%>">add</a>
+        </button>
     </div>
 
 </div>

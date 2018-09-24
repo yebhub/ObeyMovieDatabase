@@ -6,5 +6,8 @@ Rails.application.routes.draw do
 
     get'/unowned/show/:id' => 'unowned_movies#show'
 
+    get '/owned/add/:id'   => 'owned_movies#create'
+    get '/index' => 'owned_movies#index'
+
     root 'welcome#index'
 end
