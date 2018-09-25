@@ -1,5 +1,5 @@
 module UnownedMoviesHelper
-    API_KEY = "c56abc49a96b20cd28ff3d44100a1387"
+    API_KEY = ENV["API_KEY"]
     BaseUrl_first = "https://api.themoviedb.org/3/movie/" 
     BaseUrl_second = "?api_key=" + API_KEY + "&language=en-US"
 
