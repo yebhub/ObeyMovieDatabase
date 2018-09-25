@@ -2,6 +2,7 @@ class OwnedMoviesController < ApplicationController
     include UnownedMoviesHelper
 
     def index
+        @movies = OwnedMovie.all.sort_by {|movie| movie.title}
         render "index"
     end 
 

@@ -1,1 +1,46 @@
-<h1>Hello!</h1>
+<h1>Your Movies</h1>
+<div class="container">
+    <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names..">
+
+    <table id="myTable">
+      <tr class="header">
+        <th style="width:60%;">Title</th>
+        <th style="width:40%;">Poster</th>
+      </tr>
+
+      <%@movies.each do |movie|%>
+            <tr>
+                <td><%=movie.title%></td>
+                <td>
+                    <img src="https://image.tmdb.org/t/p/w185/<%=movie.poster%>">
+                </td>
+            </tr>
+        <%end%>
+      
+    </table>
+</div>
+
+
+
+<script>
+function myFunction() {
+  // Declare variables 
+  var input, filter, table, tr, td, i;
+  input = document.getElementById("myInput");
+  filter = input.value.toUpperCase();
+  table = document.getElementById("myTable");
+  tr = table.getElementsByTagName("tr");
+
+  // Loop through all table rows, and hide those who don't match the search query
+  for (i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[0];
+    if (td) {
+      if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    } 
+  }
+}
+</script>
